@@ -1,0 +1,41 @@
+$BODY__BACKGROUND: #ddcdb9;
+
+$HEADING__COLOR: #5a514f;
+$OVERLAY__BACKGROUND: transparentize(#ffffff,  0.1);
+$OVERLAY_WON__BACKGROUND: transparentize(#cd8935, 0.2);
+$OVERLAY_WON__TEXT_COLOR: #ffffff;
+$OVERLAY_LOSE__BACKGROUND: transparentize(#cf4340, 0.2);
+$OVERLAY_LOSE__TEXT_COLOR: #ffffff;
+
+$BUTTON_PRIMARY__BACKGROUND: #756868;
+$BUTTON_PRIMARY__TEXT_COLOR: #ffffff;
+$BUTTON__SHADOW_COLOR: rgba(0, 0, 0, 0.16);
+$BUTTON__BORDER_RADIUS: 2px;
+
+$BOARD__DIMENSIONS: 500px;
+$BOARD__SIZE: 4;
+$BOARD__BORDER_RADIUS: 4px;
+$BOARD__BACKGROUND: #756868;
+
+$TILE__SPACING: 5px;
+$TILE__SIZE: ($BOARD__DIMENSIONS - ($TILE__SPACING * 2 * $BOARD__SIZE)) / $BOARD__SIZE;
+$TILE__BORDER_RADIUS: $BOARD__BORDER_RADIUS * 2;
+$TILE__TEXT_COLOR: #716663;
+$TILE__BACKGROUND: #ddcdb9;
+
+$CELL__BACKGROUND: lighten($BOARD__BACKGROUND, 15%);
+
+$TILE_CONFIG: (
+        0: (background: #ddcdb9, color: #ddcdb9, font-size: 40px),
+        2: (background: #eeebd8, color: #5e5355, font-size: 40px),
+        4: (background: #81b486, color: #2d4e3a, font-size: 40px),
+        8: (background: #6cbba9, color: #2d4d45, font-size: 40px),
+        16: (background: #72a2c6, color: #3c5660, font-size: 40px),
+        32: (background: #9fbac9, color: #515f66, font-size: 40px),
+        64: (background: #cea2a3, color: #754d4c, font-size: 40px),
+        128: (background: #c58fce, color: #764d7c, font-size: 40px),
+        256: (background: #cda474, color: #82561b, font-size: 40px),
+        512: (background: #9e9acd, color: #3b4062, font-size: 40px),
+        1024: (background: #17a13f, color: #bcddba, font-size: 35px),
+        2048: (background: #cf4340, color: #ddcdb9, font-size: 35px),
+);

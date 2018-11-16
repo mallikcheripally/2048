@@ -1,3 +1,5 @@
+import "./scss/helpers.scss";
+import "./scss/main.scss";
 import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";

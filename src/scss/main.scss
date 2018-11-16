@@ -1,0 +1,29 @@
+@import "./config";
+
+.mvl-button {
+  background: $BUTTON_PRIMARY__BACKGROUND;
+  color: $BUTTON_PRIMARY__TEXT_COLOR;
+  box-shadow: 0 2px 4px 0 $BUTTON__SHADOW_COLOR;
+  border-radius: $BUTTON__BORDER_RADIUS;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 35px;
+  font-weight: 500;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &:hover, &:focus {
+    background: darken($BUTTON_PRIMARY__BACKGROUND, 20%);
+    box-shadow: 0 0 0 0 $BUTTON__SHADOW_COLOR;
+
+  }
+}

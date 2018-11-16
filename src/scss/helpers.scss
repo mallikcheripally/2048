@@ -1,0 +1,82 @@
+@import "config";
+
+@function getTileProperty($tile, $property) {
+  @if map_has_key($tile, $property) {
+    @return map_get($tile, $property)
+  }
+  @warn "The key #{$property} is not in the tile";
+  @return null;
+}
+
+@each $tileNumber, $tileColor in $TILE_CONFIG {
+  .tile-#{$tileNumber} {
+    background: getTileProperty($tileColor, background) !important;
+    color: getTileProperty($tileColor, color) !important;
+    font-size: getTileProperty($tileColor, font-size) !important;
+  }
+}
+
+@for $row from 0 through 3 {
+  @for $column from 0 through 3 {
+    .tile-position_#{$row}_#{$column}:not(.tile-isMoving) {
+      top: $TILE__SIZE * $row + ($row * 2 * $TILE__SPACING);
+      left: $TILE__SIZE * $column + ($column * 2 * $TILE__SPACING);
+    }
+  }
+}
+
+@for $fromRow from 0 through 3 {
+  @for $toRow from 0 through 3 {
+    $name: tile-row_from_#{$fromRow}_to_#{$toRow};
+
+    @if $fromRow == $toRow {
+      .#{$name} {
+        top: $TILE__SIZE * $toRow + ($toRow * 2 * $TILE__SPACING);
+      }
+    } @else {
+      .#{$name} {
+        animation-duration: 200ms;
+        animation-name: $name;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes #{$name} {
+        from {
+          top: $TILE__SIZE * $fromRow + ($fromRow * 2 * $TILE__SPACING);
+        }
+        to {
+          top: $TILE__SIZE * $toRow + ($toRow * 2 * $TILE__SPACING);
+        }
+      }
+    }
+  }
+}
+
+@for $fromColumn from 0 through 3 {
+  @for $toColumn from 0 through 3 {
+    $name: tile-column_from_#{$fromColumn}_to_#{$toColumn};
+
+    @if $fromColumn == $toColumn {
+      .#{$name} {
+        left: $TILE__SIZE * $toColumn + ($toColumn * 2 * $TILE__SPACING);
+      }
+    } @else {
+      .#{$name} {
+        animation-duration: 200ms;
+        animation-name: $name;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes #{$name} {
+        from {
+          left: $TILE__SIZE * $fromColumn + ($fromColumn * 2 * $TILE__SPACING);
+        }
+        to {
+          left: $TILE__SIZE * $toColumn + ($toColumn * 2 * $TILE__SPACING);
+        }
+      }
+    }
+  }
+}
