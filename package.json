@@ -1,6 +1,6 @@
 {
-  "name": "vuejs-2048-game",
-  "version": "0.1.0",
+  "name": "2048",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

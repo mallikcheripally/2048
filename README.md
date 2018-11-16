@@ -1,4 +1,8 @@
-# vuejs-2048-game
+# 2048 Game
+
+A clone of the classic 2048 Game implemented in Vue.Js.
+
+**Play the game [here](https://vuejs-2048-game.firebaseapp.com/)**
 
 ## Project setup
 ```
@@ -23,11 +27,6 @@ npm run test
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
 ```
 
 ### Run your unit tests
